@@ -4,9 +4,9 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import GetTransactions from './coinbase/transactions';
+import GetPrice from './coinbase/transactions';
 
-GetTransactions();
+GetPrice();
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -15,14 +15,15 @@ const userID = config.default.COINBASE_ID
 const client = coinbase.Client({'apiKey':apiKey, 'apiSecret':apiSecret})
 
 
-function GetTransactions(){
+function GetPrice(priceTime){
     //get unix time in seconds
-    var timestamp = Math.floor(Date.now() / 1000);
-
+    if(timestamp == undefined){
+        var timestamp = Math.floor(Date.now() / 1000);
+    }
     // set the parameter for the request message
     var req = {
         method: 'GET',
-        path: 'v2/accounts/:' + String(userID) +'/buys',
+        path: 'v2/prices',
         body: ''
     };
 
@@ -47,13 +48,13 @@ function GetTransactions(){
     
     request(options,function(err, response){
         if (err) console.log("Error!" + err);
-        
+        debugger;
         var res = response;
         console.log(response.body);
-        debugger;
+        
         
     });
     
 }
 
-export default GetTransactions;
+export default GetPrice;
